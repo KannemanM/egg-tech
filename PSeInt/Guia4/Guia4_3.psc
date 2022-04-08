@@ -1,4 +1,4 @@
-Algoritmo ejercicio_3
+Algoritmo Guia4_3
 	
 	//	3. Realizar un programa que rellene un vector de tamaño N, con valores ingresados por el
 	//	usuario. A continuación, se debe buscar un elemento dentro del arreglo (el número a
@@ -8,18 +8,18 @@ Algoritmo ejercicio_3
 	//	Finalmente, en caso que el número a buscar no está adentro del arreglo se debe mostrar
 	//	un mensaje.
 	
-	Definir num_arreglo, i, cant_num, buscar_valor, bandera Como Entero
+	Definir num_arreglo, i, cant_num, buscar_valor Como Entero
+	Definir error Como Logico
 	
-	bandera = 0 // variable en caso de que no se encuentre el valor buscado, se lanzara el msj
+	error = verdadero // si no se encuentra el valor se muestra el mensaje
 	
-	Escribir "Ingresa la cantidad de valores númericos que quiere ingresar: "
+	Escribir "Cantidad de numeros que quiere ingresar: "
 	Leer cant_num
 	
 	Dimension num_arreglo[cant_num]
 	
-	Escribir "Ingresa los valores númericos: "
+	Escribir "Ingresa los numeros: "
 	
-	// Rellenamos el Arreglo con los valores ingresados por el usuario
 	Para i = 0 Hasta cant_num -1 Hacer
 		leer num_arreglo[i]
 	FinPara
@@ -27,20 +27,16 @@ Algoritmo ejercicio_3
 	Escribir "Ingrese un valor a buscar: "
 	Leer buscar_valor
 	
-	// Buscamos el valor en el arreglo
 	Para i = 0 Hasta cant_num -1 Hacer
-		
-		//Comparamos el valor a buscar con cada uno de los elementos del arreglo
 		Si buscar_valor = num_arreglo[i]
-			bandera = 1 
-			Escribir "El número " , buscar_valor , " se encuentra en la posición: " , i
+			error = falso 
+			Escribir "El numero " , buscar_valor , " se encuentra en la posición: " , i
 		FinSi
 		
 	FinPara
 	
-	// En caso de que no se encuentre el valor
-	Si bandera = 0 Entonces
-		Escribir "[ERROR] El número " , buscar_valor , " NO se encuentra en el arreglo!!"
+	Si error = verdadero Entonces
+		Escribir "[ERROR] EL NUMERO " , buscar_valor , " NO SE ENCUENTRA EN EL ARREGLO!"
 	FinSi
 	
 FinAlgoritmo
